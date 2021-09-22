@@ -6,8 +6,8 @@ CREATE TABLE tbl_user (
     gender VARCHAR(10) NULL,
     mobile VARCHAR(20) NULL,
     email VARCHAR(50) NULL,
-    opt_in SMALLINT,
-    is_deleted SMALLINT,
+    opt_in BOOLEAN NOT NULL DEFAULT FALSE,
+    is_deleted BOOLEAN NOT NULL DEFAULT FALSE,
     CONSTRAINT tbl_user_pkey PRIMARY KEY (id),
     CONSTRAINT tbl_user_unique UNIQUE (mobile, uuid)
 );

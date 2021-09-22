@@ -7,8 +7,7 @@ insert into "tbl_user" (
         "gender",
         "mobile",
         "email",
-        "opt_in",
-        "is_deleted"
+        "opt_in"
     )
 values
 {{range $i, $e := ntimes 1000 }}
@@ -20,7 +19,6 @@ values
         '{{set "MALE" "FEMALE"}}',
         '{{string 11 11 "123456789"}}',
         '{{email}}',
-        {{int 0 1}},
-        {{int 0 1}}
+        {{set true false}}
     )
 {{end}};
