@@ -22,3 +22,24 @@ values
         {{set true false}}
     )
 {{end}};
+
+-- REPEAT 100
+-- NAME tbl_employee
+insert into "tbl_employee" (
+        "uuid",
+        "first_name",
+        "last_name",
+        "gender",
+        "mobile"
+    )
+values
+{{range $i, $e := ntimes 100 }}
+    {{if $i}},{{end}}
+    (
+        '{{uuid}}',
+        '{{namef}}',
+        '{{namel}}',
+        '{{set "MALE" "FEMALE"}}',
+        '{{string 11 11 "123456789"}}'
+    )
+{{end}};

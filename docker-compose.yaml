@@ -1,33 +1,33 @@
 version: "3"
 
 services:
-  zookeeper:
-    image: bitnami/zookeeper:latest
-    ports:
-      - "2181:2181"
-    volumes:
-      - "zookeeper_data:/bitnami"
-    environment:
-      - ALLOW_ANONYMOUS_LOGIN=yes
-  kafka:
-    image: bitnami/kafka:latest
-    ports:
-      - "9092:9092"
-    volumes:
-      - "kafka_data:/bitnami"
-    environment:
-      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
-      - ALLOW_PLAINTEXT_LISTENER=yes
-      - KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE=true
-    depends_on:
-      - zookeeper
+  # zookeeper:
+  #   image: bitnami/zookeeper:latest
+  #   ports:
+  #     - "2181:2181"
+  #   volumes:
+  #     - "zookeeper_data:/bitnami"
+  #   environment:
+  #     - ALLOW_ANONYMOUS_LOGIN=yes
+  # kafka:
+  #   image: bitnami/kafka:latest
+  #   ports:
+  #     - "9092:9092"
+  #   volumes:
+  #     - "kafka_data:/bitnami"
+  #   environment:
+  #     - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+  #     - ALLOW_PLAINTEXT_LISTENER=yes
+  #     - KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE=true
+  #   depends_on:
+  #     - zookeeper
 
-  redis:
-    image: redis:6
-    environment:
-      - REDIS_REPLICATION_MODE=master
-    ports:
-      - "6379:6379"
+  # redis:
+  #   image: redis:6
+  #   environment:
+  #     - REDIS_REPLICATION_MODE=master
+  #   ports:
+  #     - "6379:6379"
 
   adminer:
     image: adminer:latest
