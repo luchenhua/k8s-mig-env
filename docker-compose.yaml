@@ -22,12 +22,12 @@ services:
   #   depends_on:
   #     - zookeeper
 
-  # redis:
-  #   image: redis:6
-  #   environment:
-  #     - REDIS_REPLICATION_MODE=master
-  #   ports:
-  #     - "6379:6379"
+  redis:
+    image: redis:6
+    environment:
+      - REDIS_REPLICATION_MODE=master
+    ports:
+      - "6379:6379"
 
   adminer:
     image: adminer:latest
