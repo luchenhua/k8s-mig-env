@@ -51,7 +51,7 @@ services:
       - POSTGRES_USER=test001
       - POSTGRES_DB=msghub
     volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./init/sample/sample_source.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "5432:5432"
     restart: always
@@ -63,7 +63,7 @@ services:
       - POSTGRES_USER=test001
       - POSTGRES_DB=msghub
     volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./init/sample/sample_target.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "15432:5432"
     restart: always
