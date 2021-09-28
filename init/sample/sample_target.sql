@@ -14,8 +14,8 @@ CREATE TABLE tbl_user (
 );
 ALTER TABLE tbl_user
 SET UNLOGGED;
-ALTER TABLE tbl_user DROP CONSTRAINT tbl_user_pkey;
-ALTER TABLE tbl_user DROP CONSTRAINT tbl_user_unique;
+-- ALTER TABLE tbl_user DROP CONSTRAINT tbl_user_pkey;
+-- ALTER TABLE tbl_user DROP CONSTRAINT tbl_user_unique;
 -- tbl_employee
 CREATE TABLE tbl_employee (
     id SERIAL NOT NULL,
@@ -30,5 +30,5 @@ CREATE TABLE tbl_employee (
 );
 ALTER TABLE tbl_employee
 SET UNLOGGED;
-ALTER TABLE tbl_employee DROP CONSTRAINT tbl_employee_pkey;
-ALTER TABLE tbl_employee DROP CONSTRAINT tbl_employee_unique;
+-- ALTER TABLE tbl_employee DROP CONSTRAINT tbl_employee_pkey;
+-- ALTER TABLE tbl_employee DROP CONSTRAINT tbl_employee_unique;
