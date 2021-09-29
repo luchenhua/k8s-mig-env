@@ -28,6 +28,14 @@ services:
       - REDIS_REPLICATION_MODE=master
     ports:
       - "6379:6379"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 1024M
+        reservations:
+          cpus: "0.25"
+          memory: 1024M
 
   adminer:
     image: adminer:latest
@@ -55,6 +63,14 @@ services:
     ports:
       - "5432:5432"
     restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 4096M
+        reservations:
+          cpus: "1"
+          memory: 4096M
 
   k8s-mig-db-new:
     image: postgres:13
@@ -67,6 +83,14 @@ services:
     ports:
       - "15432:5432"
     restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 4096M
+        reservations:
+          cpus: "1"
+          memory: 4096M
 
 volumes:
   zookeeper_data:

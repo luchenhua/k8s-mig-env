@@ -1,4 +1,4 @@
--- REPEAT 100
+-- REPEAT 1000
 -- NAME tbl_user
 insert into "tbl_user" (
         "uuid",
@@ -10,7 +10,7 @@ insert into "tbl_user" (
         "opt_in"
     )
 values
-{{range $i, $e := ntimes 100 }}
+{{range $i, $e := ntimes 1000 }}
     {{if $i}},{{end}}
     (
         '{{uuid}}',
@@ -23,7 +23,7 @@ values
     )
 {{end}};
 
--- REPEAT 100
+-- REPEAT 1000
 -- NAME tbl_employee
 insert into "tbl_employee" (
         "uuid",
@@ -33,7 +33,7 @@ insert into "tbl_employee" (
         "mobile"
     )
 values
-{{range $i, $e := ntimes 100 }}
+{{range $i, $e := ntimes 1000 }}
     {{if $i}},{{end}}
     (
         '{{uuid}}',
