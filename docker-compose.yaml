@@ -57,9 +57,9 @@ services:
     environment:
       - POSTGRES_PASSWORD=test001
       - POSTGRES_USER=test001
-      - POSTGRES_DB=msghub
+      - POSTGRES_DB=messagehub
     volumes:
-      - ./init/sample/sample_source.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./init/demo/source.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "5432:5432"
     restart: always
@@ -77,9 +77,9 @@ services:
     environment:
       - POSTGRES_PASSWORD=test001
       - POSTGRES_USER=test001
-      - POSTGRES_DB=msghub
+      - POSTGRES_DB=messagehub
     volumes:
-      - ./init/sample/sample_target.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./init/demo/target.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "15432:5432"
     restart: always

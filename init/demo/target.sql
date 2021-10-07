@@ -12,8 +12,7 @@ CREATE TABLE tbl_user (
     CONSTRAINT tbl_user_pkey PRIMARY KEY (id),
     CONSTRAINT tbl_user_unique UNIQUE (mobile, uuid)
 );
-ALTER TABLE tbl_user
-SET UNLOGGED;
+ALTER TABLE tbl_user SET UNLOGGED;
 -- ALTER TABLE tbl_user DROP CONSTRAINT tbl_user_pkey;
 -- ALTER TABLE tbl_user DROP CONSTRAINT tbl_user_unique;
 -- tbl_employee
@@ -28,7 +27,6 @@ CREATE TABLE tbl_employee (
     CONSTRAINT tbl_employee_pkey PRIMARY KEY (id),
     CONSTRAINT tbl_employee_unique UNIQUE (mobile, uuid)
 );
-ALTER TABLE tbl_employee
-SET UNLOGGED;
+ALTER TABLE tbl_employee SET UNLOGGED;
 -- ALTER TABLE tbl_employee DROP CONSTRAINT tbl_employee_pkey;
 -- ALTER TABLE tbl_employee DROP CONSTRAINT tbl_employee_unique;
