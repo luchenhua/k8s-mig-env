@@ -1,5 +1,7 @@
 -- DROP SCHEMA messagehub;
-CREATE SCHEMA messagehub AUTHORIZATION messagehub;
+CREATE SCHEMA messagehub AUTHORIZATION test001;
+ALTER USER test001 IN DATABASE messagehub SET search_path to messagehub;
+
 -- messagehub.logs_table definition
 -- Drop table
 -- DROP TABLE messagehub.logs_table;
@@ -37,6 +39,7 @@ CREATE INDEX status_index ON messagehub.logs_table USING btree (status);
 CREATE INDEX system_id_index ON messagehub.logs_table USING btree (system_id);
 CREATE INDEX template_id_index ON messagehub.logs_table USING btree (template_id);
 CREATE INDEX we_chat_open_id_index ON messagehub.logs_table USING btree (we_chat_open_id);
+
 -- messagehub.tbl_event_type definition
 -- Drop table
 -- DROP TABLE messagehub.tbl_event_type;
@@ -65,6 +68,7 @@ CREATE INDEX index_tbl_event_type_event_code ON messagehub.tbl_event_type USING 
 CREATE INDEX index_tbl_event_type_system_id ON messagehub.tbl_event_type USING btree (system_id);
 CREATE INDEX index_tbl_event_type_uuid ON messagehub.tbl_event_type USING btree (uuid);
 CREATE INDEX tbl_event_type_indexes ON messagehub.tbl_event_type USING btree (uuid, event_code, system_id);
+
 -- messagehub.tbl_subscription definition
 -- Drop table
 -- DROP TABLE messagehub.tbl_subscription;
@@ -94,6 +98,7 @@ CREATE TABLE messagehub.tbl_subscription (
     )
 );
 ALTER TABLE messagehub.tbl_subscription SET UNLOGGED;
+
 -- messagehub.tbl_subscription_archieve definition
 -- Drop table
 -- DROP TABLE messagehub.tbl_subscription_archieve;
@@ -123,6 +128,7 @@ CREATE TABLE messagehub.tbl_subscription_archieve (
     )
 );
 ALTER TABLE messagehub.tbl_subscription_archieve SET UNLOGGED;
+
 -- messagehub.tbl_template_email definition
 -- Drop table
 -- DROP TABLE messagehub.tbl_template_email;
@@ -152,6 +158,7 @@ ALTER TABLE messagehub.tbl_template_email SET UNLOGGED;
 CREATE INDEX index_tbl_template_email_event_code ON messagehub.tbl_template_email USING btree (event_code);
 CREATE INDEX index_tbl_template_email_uuid ON messagehub.tbl_template_email USING btree (uuid);
 CREATE INDEX tbl_template_email_indexes ON messagehub.tbl_template_email USING btree (uuid, event_code);
+
 -- messagehub.tbl_template_sms definition
 -- Drop table
 -- DROP TABLE messagehub.tbl_template_sms;
@@ -179,6 +186,7 @@ ALTER TABLE messagehub.tbl_template_sms SET UNLOGGED;
 CREATE INDEX index_tbl_template_sms_event_code ON messagehub.tbl_template_sms USING btree (event_code);
 CREATE INDEX index_tbl_template_sms_uuid ON messagehub.tbl_template_sms USING btree (uuid);
 CREATE INDEX tbl_template_sms_indexes ON messagehub.tbl_template_sms USING btree (uuid, event_code);
+
 -- messagehub.tbl_template_wechat definition
 -- Drop table
 -- DROP TABLE messagehub.tbl_template_wechat;

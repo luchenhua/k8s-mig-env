@@ -1,5 +1,6 @@
 -- DROP SCHEMA messagehub;
-CREATE SCHEMA messagehub AUTHORIZATION messagehub;
+CREATE SCHEMA messagehub AUTHORIZATION test001;
+ALTER USER test001 IN DATABASE messagehub SET search_path to messagehub;
 
 -- messagehub.logs_table definition
 -- Drop table

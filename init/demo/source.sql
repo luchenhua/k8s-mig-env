@@ -1,5 +1,9 @@
+-- DROP SCHEMA messagehub;
+CREATE SCHEMA messagehub AUTHORIZATION test001;
+ALTER USER test001 IN DATABASE messagehub SET search_path to messagehub;
+
 -- tbl_user
-CREATE TABLE tbl_user (
+CREATE TABLE messagehub.tbl_user (
     id SERIAL NOT NULL,
     uuid VARCHAR(50) NULL,
     first_name VARCHAR(20) NULL,
@@ -12,8 +16,9 @@ CREATE TABLE tbl_user (
     CONSTRAINT tbl_user_pkey PRIMARY KEY (id),
     CONSTRAINT tbl_user_unique UNIQUE (mobile, uuid)
 );
+
 -- tbl_employee
-CREATE TABLE tbl_employee (
+CREATE TABLE messagehub.tbl_employee (
     id SERIAL NOT NULL,
     uuid VARCHAR(50) NULL,
     first_name VARCHAR(20) NULL,
